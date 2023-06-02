@@ -9,3 +9,4 @@ type Flatten<T extends any[]> = T extends [infer First, ... infer Rest] ?
     // 
 type B = A<[1, [2]]>
 type A<T> = T extends [infer First, ... infer Rest] ? true : false
+// X extends ? : 中不能有rest语法
