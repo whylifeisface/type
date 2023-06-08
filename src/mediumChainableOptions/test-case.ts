@@ -1,13 +1,15 @@
 import type { Alike, Expect } from '@type-challenges/utils'
 
-declare const a: Chainable
+declare const a: Chainable<number>
 
 const result1 = a
   .option('foo', 123)
   .option('bar', { value: 'Hello World' })
   .option('name', 'type-challenges')
   .get()
-type A= typeof result1
+const result4 = a.get()
+type B = typeof result4
+type A = typeof result1
 const result2 = a
   .option('name', 'another name')
   // @ts-expect-error
