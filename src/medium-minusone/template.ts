@@ -1,4 +1,4 @@
-type MinusOne<T extends number | string> =  (MinusOneString<T>)
+type MinusOne<T extends string> =  (MinusOneString<T>)
     //结果是string 如何强转为number
 
 type MinusOneString<T extends number | string> = `${T}` extends `${infer First}${infer Rest}` ?
@@ -16,3 +16,4 @@ type MinusOneString<T extends number | string> = `${T}` extends `${infer First}$
                                             : never
         : `${First}${MinusOne<Rest>}`
     : true
+//TODO
